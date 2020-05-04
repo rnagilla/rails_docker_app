@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @message = 'Static Page'
+    @message = 'Dynamic'
+
+    @posts = Post.all
   end
 end
