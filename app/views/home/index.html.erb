@@ -1,8 +1,16 @@
 Home Page:
-<%= @message %>
-
-<%= @posts.each do |post| %>
+<%= @posts.sort.each do |post| %>
   <h1> <%= post.title %> </h1>
   <h2> <%= post.author.name %> </h2>
   <p> <%= post.body %> </p>
+
+  <br>
+
+  <p>
+    <%= link_to 'Like', increment_async_path(post_id: post.id) , method: :post %>
+    <br>
+    Total Likes:
+    <%= post.like_count %>
+  </p>
+
 <% end %>

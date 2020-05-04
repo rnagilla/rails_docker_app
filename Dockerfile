@@ -13,6 +13,9 @@ COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 
 #install gems
+RUN gem update --system
+RUN gem install bundler -v 2.1.4
+RUN gem update --system
 RUN bundle install
 
 #copy whole app
